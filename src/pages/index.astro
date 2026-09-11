@@ -1,0 +1,70 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { withBase } from '../utils/url';
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 5);
+---
+
+<!doctype html>
+<html lang="ru">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>{SITE_TITLE}</h1>
+			<p>{SITE_DESCRIPTION}</p>
+
+			<h2>Последние записи</h2>
+			{
+				posts.length === 0 ? (
+					<p>Пока пусто. Первая запись скоро появится.</p>
+				) : (
+					<ul class="post-list">
+						{posts.map((post) => (
+							<li>
+								<a href={withBase(`/blog/${post.id}/`)}>{post.data.title}</a>
+								<div class="date"><FormattedDate date={post.data.pubDate} /></div>
+								<p>{post.data.description}</p>
+							</li>
+						))}
+					</ul>
+				)
+			}
+
+			<p><a href={withBase('/blog')}>Все записи</a> · <a href={withBase('/rss.xml')}>RSS</a></p>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.post-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.post-list li {
+		margin-bottom: 1.5rem;
+	}
+	.post-list a {
+		font-size: 1.25rem;
+		font-weight: 700;
+	}
+	.post-list .date {
+		display: block;
+		color: rgb(var(--gray));
+		font-size: 0.9rem;
+	}
+	.post-list p {
+		margin: 0.25rem 0 0;
+	}
+</style>
