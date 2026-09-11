@@ -1,13 +1,13 @@
 ---
-title: "Обо мне"
-description: "Кто пишет этот блог и о чём он."
+title: "About"
+description: "Who writes this blog and what it covers."
 ---
 
-Привет. Здесь я пишу заметки о разработке: что читаю, что ломаю и как чиню.
-Формат свободный, расписания нет.
+Hi. I write notes here about software development: what I read, what I break and
+how I fix it. Free form, no schedule.
 
-Блог собран на [Astro](https://astro.build/) с темой
-[AstroPaper](https://github.com/satnaing/astro-paper) и живёт на GitHub Pages.
-Исходники открыты, ссылка на репозиторий есть в шапке.
+The blog is built with [Astro](https://astro.build/) and the
+[AstroPaper](https://github.com/satnaing/astro-paper) theme, and it lives on
+GitHub Pages. The source is public, the link is in the header.
 
-Этот текст лежит в `src/content/pages/about.md`, замени его на свой.
+This text lives in `src/content/pages/about.md`, replace it with your own.

@@ -4,11 +4,11 @@ export default defineAstroPaperConfig({
   site: {
     url: "https://yeskermesovv.github.io/qblog/",
     title: "qblog",
-    description: "Личный блог: заметки о разработке и всём, что рядом.",
+    description: "A personal blog: notes on software development and whatever is nearby.",
     author: "yeskermesovv",
     profile: "https://github.com/yeskermesovv",
     ogImage: "default-og.jpg",
-    lang: "ru",
+    lang: "en",
     timezone: "Asia/Almaty",
     dir: "ltr",
   },
@@ -35,6 +35,6 @@ export default defineAstroPaperConfig({
     { name: "telegram", url: "https://t.me/share/url?url=" },
     { name: "whatsapp", url: "https://wa.me/?text=" },
     { name: "x", url: "https://x.com/intent/post?url=" },
-    { name: "mail", url: "mailto:?subject=Интересная%20запись&body=" },
+    { name: "mail", url: "mailto:?subject=See%20this%20post&body=" },
   ],
 });

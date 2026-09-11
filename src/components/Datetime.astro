@@ -2,14 +2,12 @@
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
-import "dayjs/locale/ru";
 import IconCalendar from "@/assets/icons/IconCalendar.svg";
 import config from "@/config";
 import { useTranslations } from "@/i18n";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
-dayjs.locale(config.site.lang);
 
 type Props = {
   class?: string;
@@ -35,7 +33,7 @@ const datetime = dayjs(isModified ? modDatetime : pubDatetime).tz(
   postTimezone ?? config.site.timezone
 );
 
-const date = datetime.format("D MMMM YYYY");
+const date = datetime.format("D MMM, YYYY");
 ---
 
 <div

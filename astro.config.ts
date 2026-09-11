@@ -31,8 +31,8 @@ export default defineConfig({
     }),
   ],
   i18n: {
-    locales: ["ru"],
-    defaultLocale: "ru",
+    locales: ["en"],
+    defaultLocale: "en",
     routing: {
       prefixDefaultLocale: false,
     },
@@ -40,8 +40,8 @@ export default defineConfig({
   markdown: {
     processor: unified({
       remarkPlugins: [
-        [remarkToc, { heading: "Оглавление" }],
-        [remarkCollapse, { test: "Оглавление" }],
+        remarkToc,
+        [remarkCollapse, { test: "Table of contents" }],
       ],
       rehypePlugins: [rehypeCallouts],
     }),

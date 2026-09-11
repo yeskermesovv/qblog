@@ -1,49 +1,52 @@
 ---
-title: "Привет, мир"
-description: "Первая запись: зачем этот блог и как добавлять новые статьи."
+title: "Hello, world"
+description: "The first post: what this blog is for and how to add new ones."
 pubDatetime: 2026-09-11T22:00:00+05:00
 tags:
-  - заметки
+  - notes
 featured: true
 ---
 
-Это первая запись. Блог собран на [Astro](https://astro.build/) с темой
-[AstroPaper](https://github.com/satnaing/astro-paper) и опубликован на GitHub Pages.
+This is the first post. The blog runs on [Astro](https://astro.build/) with the
+[AstroPaper](https://github.com/satnaing/astro-paper) theme and is published on GitHub Pages.
 
-## Оглавление
+## Table of contents
 
-## Как добавить новую запись
+## Adding a new post
 
-Создай файл `src/content/posts/имя-записи.md`. Имя файла станет адресом записи,
-поэтому пиши латиницей без пробелов. В начале файла обязателен блок frontmatter:
+Create a file at `src/content/posts/your-post.md`. The file name becomes the post
+URL, so keep it lowercase and hyphenated. Every post starts with a frontmatter block:
 
 ```markdown
 ---
-title: "Заголовок записи"
-description: "Короткое описание для списка и поисковиков."
+title: "Post title"
+description: "A short summary for the post list and search engines."
 pubDatetime: 2026-09-20T12:00:00+05:00
 tags:
-  - разработка
+  - engineering
 ---
 ```
 
-Обязательные поля: `title`, `description` и `pubDatetime`. Остальные можно опустить.
-Если поле заполнено неправильно, сборка упадёт с понятной ошибкой, это нормально.
+Only `title`, `description` and `pubDatetime` are required. Get a field wrong and the
+build fails with a readable error, which is exactly what you want.
 
-## Полезные необязательные поля
+## Useful optional fields
 
-| Поле | Что делает |
+| Field | What it does |
 | --- | --- |
-| `featured` | выносит запись в блок «Избранное» на главной |
-| `draft` | прячет запись из сборки, пока пишется |
-| `modDatetime` | показывает дату обновления рядом с датой публикации |
-| `tags` | группирует записи, по умолчанию `others` |
-| `ogImage` | своя картинка для соцсетей вместо сгенерированной |
+| `featured` | pins the post to the Featured block on the home page |
+| `draft` | keeps the post out of the build while you write it |
+| `modDatetime` | shows an updated date next to the publish date |
+| `tags` | groups posts, defaults to `others` |
+| `ogImage` | a custom social image instead of the generated one |
 
-## Что умеет тема
+A post dated in the future stays out of the build until that time arrives. That is
+scheduled publishing, not a bug.
 
-Поиск по всем записям работает без сервера, индекс собирается при сборке.
-Картинки для соцсетей генерируются автоматически под каждую запись.
-Тёмная тема переключается кнопкой в шапке и запоминает выбор.
+## What the theme gives you
 
-Строчку `## Оглавление` выше тема разворачивает в оглавление, если она есть в записи.
+Full text search runs without a server, the index is built at build time.
+Social images are generated per post. Dark mode toggles from the header and
+remembers the choice.
+
+The `## Table of contents` line above expands into a table of contents when present.
