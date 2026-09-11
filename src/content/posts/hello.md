@@ -3,7 +3,7 @@ title: "Hello, world"
 description: "The first post: what this blog is for and how to add new ones."
 pubDatetime: 2026-09-11T22:00:00+05:00
 tags:
-  - notes
+  - meta
 ---
 
 This is the first post. The blog runs on [Astro](https://astro.build/) with the

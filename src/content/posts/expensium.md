@@ -3,7 +3,7 @@ title: "Expensium: tracking expenses by talking to your phone"
 description: "A voice-driven expense tracker that runs entirely in the browser, parses spoken Russian and Kazakh, and works offline."
 pubDatetime: 2026-09-12T01:00:00+05:00
 tags:
-  - side-projects
+  - projects
   - javascript
 featured: true
 ---
