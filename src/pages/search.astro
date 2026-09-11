@@ -67,8 +67,8 @@ const t = useTranslations(locale);
       if (import.meta.env.DEV) {
         pageFindSearch.innerHTML = `
             <div class="bg-muted/75 rounded p-4 space-y-4 mb-4">
-              <p><strong>DEV mode Warning! </strong>You need to build the project at least once to see the search results during development.</p>
-              <code class="block bg-black text-white px-2 py-1 rounded">pnpm run build</code>
+              <p><strong>Режим разработки. </strong>Чтобы поиск заработал локально, соберите проект хотя бы один раз:</p>
+              <code class="block bg-black text-white px-2 py-1 rounded">npm run build</code>
             </div>
           `;
       }
@@ -79,6 +79,22 @@ const t = useTranslations(locale);
         bundlePath,
         showImages: false,
         showSubResults: true,
+        // Pagefind ships its own UI strings, separate from src/i18n.
+        translations: {
+          placeholder: "Искать по записям...",
+          clear_search: "Очистить",
+          load_more: "Показать ещё",
+          search_label: "Поиск по блогу",
+          filters_label: "Фильтры",
+          zero_results: "По запросу [SEARCH_TERM] ничего не найдено",
+          many_results: "Найдено записей: [COUNT]",
+          one_result: "Найдена одна запись",
+          alt_search:
+            "По запросу [SEARCH_TERM] ничего не найдено, показаны результаты для [DIFFERENT_TERM]",
+          search_suggestion:
+            "По запросу [SEARCH_TERM] ничего не найдено. Попробуйте один из запросов:",
+          searching: "Ищем [SEARCH_TERM]...",
+        },
         processTerm: function (term: string) {
           params.set("q", term); // Update the `q` parameter in the URL
           history.replaceState(history.state, "", "?" + params.toString()); // Push the new URL without reloading
